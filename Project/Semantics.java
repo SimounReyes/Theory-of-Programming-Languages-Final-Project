@@ -20,10 +20,7 @@ public class Semantics {
         results += semantics_analyzer(tokens) ? "Correct!" : "Incorrect!";
 
         sem = results + "\n\n";
-        /*
-         * GUI2 guii = new GUI2();
-         * guii.label.setText("hai");
-         */
+
         List<String> row1 = new ArrayList<String>();
         List<String> row2 = new ArrayList<String>();
 

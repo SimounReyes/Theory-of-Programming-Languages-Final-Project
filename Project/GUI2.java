@@ -11,7 +11,6 @@ import java.io.IOException;
 import static java.awt.Color.WHITE;
 
 public class GUI2 implements ActionListener {
-    private int count;
     JLabel label;
     JLabel label2;
     JButton button, button2, button3, button4, button5;
@@ -30,6 +29,7 @@ public class GUI2 implements ActionListener {
 
         panel.setLayout(null);
 
+        //OPEN FILE BUTTON
         button = new JButton("Open File");
         button.setFont(new Font("MV Boli", Font.PLAIN, 23));
         button.setBackground(new Color(0xFF26333A, true));
@@ -39,6 +39,7 @@ public class GUI2 implements ActionListener {
         button.setFocusable(false);
         button.setBorder(border);
 
+        //RESULT LABEL
         label = new JLabel(" RESULT: ");
         label.setBounds(265, 35, 585, 250);
         label.setBackground(new Color(0x1B262C));
@@ -50,6 +51,7 @@ public class GUI2 implements ActionListener {
         JScrollPane scroller = new JScrollPane(label, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
+        //FILE CONTENT LABEL
         label2 = new JLabel();
         label2.setBounds(265, 300, 585, 50);
         label2.setBackground(new Color(0x1B262C));
@@ -59,6 +61,7 @@ public class GUI2 implements ActionListener {
         label2.setOpaque(true);
         label2.setBorder(border);
 
+        //LEXICAL ANALYSIS BUTTON
         button2 = new JButton("Lexical Analysis");
         button2.setFont(new Font("MV Boli", Font.PLAIN, 20));
         button2.setBackground(new Color(0xFF26333A, true));
@@ -69,6 +72,7 @@ public class GUI2 implements ActionListener {
         button2.setBounds(35, 110, 200, 40);
         button2.setBorder(border);
 
+        //SYNTAX ANALYSIS BUTTON
         button3 = new JButton("Syntax Analysis");
         button3.setFont(new Font("MV Boli", Font.PLAIN, 20));
         button3.setBackground(new Color(0xFF26333A, true));
@@ -79,6 +83,7 @@ public class GUI2 implements ActionListener {
         button3.setBounds(35, 170, 200, 40);
         button3.setBorder(border);
 
+        //SEMANTIC ANALYSIS BUTTON
         button4 = new JButton("Semantic Analysis");
         button4.setFont(new Font("MV Boli", Font.PLAIN, 20));
         button4.setBackground(new Color(0xFF26333A, true));
@@ -89,6 +94,7 @@ public class GUI2 implements ActionListener {
         button4.setBounds(35, 230, 200, 40);
         button4.setBorder(border);
 
+        //CLEAR BUTTON
         button5 = new JButton("Clear");
         button5.setFont(new Font("MV Boli", Font.PLAIN, 23));
         button5.setBackground(new Color(0xFF26333A, true));
@@ -100,6 +106,7 @@ public class GUI2 implements ActionListener {
 
         panel.setBackground(new Color(0x29394B));
 
+        //ADD THE BUTTONS AND LABEL TO DISPLAY
         frame.add(panel);
         panel.add(button);
         panel.add(label);
@@ -121,6 +128,7 @@ public class GUI2 implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        //OPEN FILE BUTTON
         if (e.getSource() == button) {
             button2.setEnabled(false);
             button3.setEnabled(false);
@@ -150,7 +158,10 @@ public class GUI2 implements ActionListener {
                 label2.setText("<html>&nbsp;<font size='6'>" + con + "</font><html>");
                 button2.setEnabled(true);
             }
-        } else if (e.getSource() == button2) {
+        }
+
+        //LEXICAL ANALYSIS BUTTON
+        else if (e.getSource() == button2) {
             Lexical lexical;
 
             lexical = new Lexical(con);
@@ -161,7 +172,10 @@ public class GUI2 implements ActionListener {
 
             button3.setEnabled(true);
             button2.setEnabled(false);
-        } else if (e.getSource() == button3) {
+        }
+
+        //SYNTAX ANALYSIS BUTTON
+        else if (e.getSource() == button3) {
             Syntax syntax = new Syntax(con);
             System.out.println("s"+syntax.syntax+"s");
             label.setText("<html>&nbsp;RESULT:\n"
@@ -172,7 +186,10 @@ public class GUI2 implements ActionListener {
                 button4.setEnabled(true);
             }
             button3.setEnabled(false);
-        } else if (e.getSource() == button4) {
+        }
+
+        //SEMANTIC ANALYSIS BUTTON
+        else if (e.getSource() == button4) {
             Semantics semantics = new Semantics(con);
             label.setText("<html>&nbsp;RESULT:\n"
                     + semantics.sem.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>")
@@ -180,7 +197,10 @@ public class GUI2 implements ActionListener {
                     + "</html>");
             // label.setText(" RESULT:\n" + semantics.sem);
             button4.setEnabled(false);
-        } else if (e.getSource() == button5) {
+        }
+
+        //CLEAR BUTTON
+        else if (e.getSource() == button5) {
             button2.setEnabled(false);
             button3.setEnabled(false);
             button4.setEnabled(false);

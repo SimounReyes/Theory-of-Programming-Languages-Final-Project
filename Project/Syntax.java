@@ -21,8 +21,6 @@ public class Syntax {
         if (what == false) {
             forOutput += what_wrong();
         }
-        System.out.println("asa"+results+"asa");
-        System.out.println("www"+forOutput+"www");
         if(results.equals("Syntax is Incorrect!")){
             marker= false;
         }
