@@ -1,10 +1,8 @@
-package TPL2;
+package Project;
 /*
  * Enter Expression: int x = 2.0;
  * Syntax is Correct!
  */
-
-import javax.swing.border.Border;
 
 public class Syntax {
     String syntax = " ";
