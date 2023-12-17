@@ -3,5 +3,7 @@ Create a program that displays the Lexical Analysis, Syntax Analysis and Semanct
 
 ## Members
 Calma, Trebiger Harah
-De Dios Marco Angelo
+
+De Dios, Marco Angelo
+
 Reyes, Simoun Irwin
